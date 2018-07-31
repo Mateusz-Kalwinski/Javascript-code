@@ -1,39 +1,22 @@
-window.onload = function() {
+const sHand = document.querySelector('.s-hand');
+const mHand = document.querySelector('.m-hand');
+const hHand = document.querySelector('.h-hand');
 
-  // Normalize the various vendor prefixed versions of getUserMedia.
-  navigator.getUserMedia = (navigator.getUserMedia ||
-                            navigator.webkitGetUserMedia ||
-                            navigator.mozGetUserMedia || 
-                            navigator.msGetUserMedia);
-
-}// Check that the browser supports getUserMedia.
-// If it doesn't show an alert, otherwise continue.
-if (navigator.getUserMedia) {
-  // Request the camera.
-  navigator.getUserMedia(
-    // Constraints
-    {
-      video: true
-    },
-
-    // Success Callback
-    function(localMediaStream) {
-
-    },
-
-    // Error Callback
-    function(err) {
-      // Log the error to the console.
-      console.log('The following error occurred when trying to use getUserMedia: ' + err);
-    }
-  );
-
-} else {
-  alert('Sorry, your browser does not support getUserMedia');
+function setDate(){
+  const now = new Date();
+  
+  const sec = now.getSeconds();
+  const secDeg = ((sec /60) *360) +90;
+    sHand.style.transform = `rotate(${secDeg}deg)`;
+  
+  const min = now.getMinutes();
+  const minDeg = ((min / 60) * 360) + ((sec/60)*6) + 90;
+  mHand.style.transform = `rotate(${minDeg}deg)`;
+  
+  const hour = now.getHours();
+  const hourDeg = ((hour / 12) * 360) + ((min/60)*30) + 90;
+  hHand.style.transform = `rotate(${hourDeg}deg)`;
 }
-// Get a reference to the video element on the page.
-var vid = document.getElementById('camera-stream');
 
-// Create an object URL for the video stream and use this 
-// to set the video source.
-vid.src = window.URL.createObjectURL(localMediaStream);
+setInterval(setDate, 1000);
+setDate();
