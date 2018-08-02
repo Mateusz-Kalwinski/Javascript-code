@@ -1,0 +1,46 @@
+body, html {
+  display: flex;
+  height: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center
+}
+
+.border{
+  border: 10px solid #000;
+}
+
+.main {
+    background-image: url("../img/reinis-birznieks-646962-unsplash.jpg");
+    height: 500px;
+    width: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.btn{
+  text-decoration: none;
+  background-color: black;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+  justify-content: center;
+  display: flex;
+  margin: 100px;
+
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn:hover{
+  color: #fff;
+  background: #000;
+  text-decoration: line-through;
+}
