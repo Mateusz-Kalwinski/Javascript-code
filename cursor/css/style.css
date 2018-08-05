@@ -12,7 +12,7 @@ body, html {
 }
 
 .main {
-    background-image: url("../img/reinis-birznieks-646962-unsplash.jpg");
+    background-image: url("../img/bg.jpg");
     height: 500px;
     width: 700px;
     background-position: center;
@@ -22,7 +22,11 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-  
+}
+
+.range {
+  padding: 100px;
+  border: 1px solid black;
 }
 
 .btn{
@@ -31,12 +35,14 @@ body, html {
   color: #fff;
   width: 150px;
   height: 40px;
-  justify-content: center;
-  display: flex;
-  margin: 100px;
-
-  align-items: center;
-  transition: all 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  text-align: center;
+  line-height: 40px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-out;
 }
 
 .btn:hover{
