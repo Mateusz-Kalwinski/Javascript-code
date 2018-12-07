@@ -1,1 +1,1 @@
-# Javascript-code
+# Simple application to-do on Bootstrap
